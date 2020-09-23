@@ -16,6 +16,11 @@ Just move the scripts into somewhere Cygwin is cognizant of them.
 I keep the scripts on a share on the hypervisor and then utilize them though
 Task manager for automation.
 
+Start program: C:\cygwin64\bin\bash.exe
+
+Arguments: -lic '//remote/path/script.sh arg1 arg2'
+
+
 # Selection
 
 1) backup.sh | This is my backup script.  It safely shuts down our VMs,

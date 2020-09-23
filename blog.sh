@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#log server ip
+lgsvr=("")
+
 if [[ $1 == site1 ]] ; then log1=server1 ; fi
 if [[ $1 == site2 ]] ; then log1=server2 ; fi
 #trigger on Log: Microsoft-Windows-Backup/Operational
@@ -14,6 +17,6 @@ end=$(powershell 'Get-WinEvent Microsoft-Windows-Backup |  Where-Object { $_.Id 
 start=$(echo ${start::-1})
 end=$(echo ${end::-2})
 
-echo "$start : $log2 : $end" >> //<log server>/global_logs/backup.$log1.log.txt
-unix2dos //<log server>/global_logs/backup.$log1.log.txt
+echo "$start : $log2 : $end" >> //$lgsvr/global_logs/backup.$log1.log.txt
+unix2dos //$lgsvr/global_logs/backup.$log1.log.txt
 
